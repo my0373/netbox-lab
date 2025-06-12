@@ -23,6 +23,4 @@ resource "aws_instance" "orb_instance" {
   iam_instance_profile        = aws_iam_instance_profile.ssm_instance_profile.name
 }
 
-output "orb_ssm_command" {
-  value = "aws ssm start-session --target ${aws_instance.orb_instance.id} --region ${var.aws_region}"
-}
+

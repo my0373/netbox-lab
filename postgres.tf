@@ -34,11 +34,3 @@ resource "aws_db_instance" "postgres" {
   skip_final_snapshot    = true
 }
 
-output "postgres_host" {
-  value = aws_db_instance.postgres.address
-}
-
-output "postgres_password" {
-  value     = var.postgres_password
-  sensitive = true
-}

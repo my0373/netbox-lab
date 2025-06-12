@@ -32,6 +32,3 @@ resource "aws_elasticache_cluster" "redis" {
   security_group_ids   = [aws_security_group.redis.id]
 }
 
-output "redis_host" {
-  value = aws_elasticache_cluster.redis.cache_nodes[0].address
-}
