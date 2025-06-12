@@ -26,10 +26,3 @@ resource "aws_instance" "nbc_instance" {
   iam_instance_profile        = aws_iam_instance_profile.ssm_instance_profile.name
 }
 
-output "nbc_ssm_command" {
-  value = "aws ssm start-session --target ${aws_instance.nbc_instance.id} --region ${var.aws_region}"
-}
-
-output "nbc_url" {
-  value = "https://${aws_instance.nbc_instance.public_ip}"
-}

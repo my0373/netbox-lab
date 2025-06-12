@@ -22,7 +22,3 @@ resource "aws_instance" "ansible_instance" {
   associate_public_ip_address = true
   iam_instance_profile        = aws_iam_instance_profile.ssm_instance_profile.name
 }
-
-output "ansible_ssm_command" {
-  value = "aws ssm start-session --target ${aws_instance.ansible_instance.id} --region ${var.aws_region}"
-}

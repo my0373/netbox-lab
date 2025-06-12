@@ -52,14 +52,3 @@ resource "aws_instance" "nbe_instance" {
   }
 }
 
-output "nbe_ssm_command" {
-  value = "aws ssm start-session --target ${aws_instance.nbe_instance.id} --region ${var.aws_region}"
-}
-
-output "nbe_console_url" {
-  value = "https://${aws_instance.nbe_instance.public_ip}:30000"
-}
-
-output "nbe_webui_url" {
-  value = "https://${aws_instance.nbe_instance.public_ip}"
-}
